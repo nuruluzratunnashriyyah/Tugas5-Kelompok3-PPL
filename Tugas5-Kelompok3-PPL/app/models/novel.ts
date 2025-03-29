@@ -1,6 +1,9 @@
 import { BaseModel, column } from '@adonisjs/lucid/orm'
 
 export default class Novel extends BaseModel {
+  @column({ isPrimary: true })
+  public id!: number
+  
   @column()
   public title!: string
 

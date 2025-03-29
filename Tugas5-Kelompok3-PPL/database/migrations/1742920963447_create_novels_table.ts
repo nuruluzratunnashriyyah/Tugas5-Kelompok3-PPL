@@ -13,6 +13,10 @@ export default class Novels extends BaseSchema {
       table.float('rating').notNullable()
       table.text('summary').notNullable()
     })
+
+    this.schema.alterTable(this.tableName, (table) => {
+      table.increments('id').primary()
+    })
   }
 
   public async down () {
